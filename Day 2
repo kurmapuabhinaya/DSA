@@ -1,1 +1,67 @@
+Fibonacci using recursion:
+public class Main
+{
+	public static void main(String[] args) {
+		recfibonacci rec=new recfibonacci();
+		int res=rec.fib(7);
+		System.out.println(res);
+	}
+}
+class recfibonacci{
+    int fib(int n){
+        // if(n==0)
+        //     return 0;
+        // if(n==1)
+        //     return 1;
+        if(n<2){
+            return n;
+        }
+        else{
+            return fib(n-1)+fib(n-2);
+        }
+        
+    }
+}
 
+Factorial using recursion:
+public class Main
+{
+	public static void main(String[] args) {
+		recfibonacci rec=new recfibonacci();
+		int res=rec.fact(5);
+		System.out.println(res);
+	}
+}
+class recfibonacci{
+    int fact(int n){
+        if(n==0){
+            return 1;
+        }
+        else{
+            return fact(n-1)*n;
+        }
+        
+    }
+}
+HCF using recursion:
+public class Main
+{
+	public static void main(String[] args) {
+		find_hcf rec=new find_hcf();
+		int res=rec.hcf(18,12);
+		System.out.println(res);
+	}
+}
+class find_hcf{
+    int hcf(int a,int b){
+        if(a%b==0){
+            return b;
+        }
+        else{
+            int fact=a%b;
+            return hcf(b,fact);
+            
+        }
+        
+    }
+}
