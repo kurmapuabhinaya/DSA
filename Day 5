@@ -1,190 +1,212 @@
-2d arrays:
-> It is a 2 dimensional array that consists of rows and columns.
-> The very first square bracket represent rows.
-> The second represent columns.
-> while declaring the array we have to declare num of rows and column nums are optional.
-> Each row will act as a individual array.
+Arrays:
+Whatever variable names we have, will be stored in stack memory . Data will be stored in heap memory.
+Arrays: Collection of similar kind of data in a continuous allocation.
+In C and C++, we have pointers so, definitely elements will be stored in continuous format.
+In java, we don’t have pointers so, there is a chance that elements might be stored in random allocation
+Syntax:
+   datatype[] arr_name
+Primitive and Non-primitive datatype : Primitive datatypes can’t be split and divided. Non-primitive data types can be divided.
+Primitive: int, float, char.
+    Non-primitive: string and all objects created by user.(string can be divided into char).
+-eg:
+   class Node{
+    int data;
+    Node next;
+}
+All the objects will be stored in heap memory. All the references will be stored in stack memory. 
+Stack memory have less space compared to heap memory .
 
-*To give array as input and print it:
-import java.util.Scanner;
-class Main {
-    public static void main(String[] args){
-        Scanner in = new Scanner(System.in);
-        int[][] arr = new int[3][2];
-        for(int i=0;i<arr.length;i++){
-            for(int j=0;j<arr.length;j++){
-                arr[i][j] = in.nextInt();
-            }
-        }
-        for(int i = 0;i<arr.length;i++){
-            for(int j=0;j<arr.length;j++){
-                System.out.print(arr[i][j]);
-            }
-            System.out.println();
-        }
+
+
+Eg: int a=10;
+int b=12;
+int c=14;
+int d=16;
+instead of creating multiple variables, create an array to store those values.
+int[] arr={10,12,14,16}
+If we create multiple variables, to get the data simply we can print that variable. When it comes to array, if we want to print the data we can print using index values.
+By default, index values will start from 0.
+The first value in array can be stored anywhere randomly and we can’t say where. Based on the first element, remaining elements will be stored.
+Declaration and initialisation happened in same line.
+class Main{
+    public static void main (String[] args) {
+        int[] arr={1,2,3,4,5}
     }
 }
-
-*To check whether the array is sorted or not:
-import java.util.Scanner;
+	int[] arr;// declaration
+          arr={1,2,3,4,5} // initialization
+- 
 public class Main
 {
-	static String checkSorted(int[] arr) {
-		for(int i=0; i<arr.length-1; i++) {
-			if(arr[i]>arr[i+1]) {
-				return "unsorted";
-			}
+	public static void main(String[] args) {
+		int[] arr={10,12,14,16};
+		for(int i=0;i<arr.length;i++){
+		    System.out.println(arr[i]);
 		}
-		return "sorted";
-	}
-	public static void main(String[] args) {
-		Scanner in =new Scanner(System.in);
-		int[] arr= {1,3,53,5};
-		System.out.println(checkSorted(arr));
 	}
 }
+To get the length of the array, we have a method called arr.length().
+In array its arr.length() and in string its string_name.length().
 
-*To swap two variables without using a third variable.
+Camel case and snake case:
 
+array name using _ is snake case(arr_name) and using capital letter is camel case.(arrName)
+In java, it is preferred to use camel case to write production level code.
+Eg :
+void additionOfTwoNumbers(){
+// camel_case
+}
+Type of printing formats In arrays:
 
+1)We can print the array values using simple for loop.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-*To check whether the element is present in the array or not.
-import java.util.Scanner;
 public class Main
 {
-    static boolean checkElement(int[] arr,int target){
-        for(int i=0;i<arr.length-1;i++){
-            if(arr[i]==target){
-                return true;
-            }
-    }return false;
-    }
 	public static void main(String[] args) {
-	    Scanner in =new Scanner(System.in);
-		int[] arr={1,3,53,5};
-		int target=3;
-		System.out.println(checkElement(arr,target));
+		int[] arr={10,12,14,16};
+		for(int i=0;i<arr.length;i++){
+		    System.out.println(arr[i]+" ");
+		}
 	}
 }
+2)we can print array values using for-each loop.
+for(int i:arr){
+		 System.out.println(arr[i]+" ");   
+		}
+In for-each loop, we don’t need index values .
 
-*program to move all the 0s to right side and 1s to left side of a given array.
-[1,0,1,0,1,0] to [1,1,1,0,0,0]
-import java.util.Collections;
+3)
+System.out.print(Arrays.toString(arr));
+.toString() is an inbuilt method, to print  an array . It will accept one argument and that will be an array.
+
+Declaring the size of an array and initialising the values later:
+
+Array have fixed size, after declaring array size once, it can’t be changed.
+		int[] arr=new int[5];      
+int[] arr - array reference was created.
+With the help of new keyword, actual object will be created in the heap memory , for that particular data type and size.
+If the array type is int, all  the default values are zeroes(0). If  it is a string, all  the default values are null. And null is a literal(you can assign it but can’t create it).
+		int[] arr=new int[5];
+		arr[0]=1;
+		arr[1]=2;
+		arr[2]=3;
+		arr[3]=4;
+		arr[4]=5;
+Instead of writing this, we can write the following-
 import java.util.*;
 public class Main
 {
 	public static void main(String[] args) {
-		Scanner in =new Scanner(System.in);
-		int[] arr= {1,0,1,0,0,1};
-		int n=arr.length;
-		int i=0;
-		int j=n-1;
-		while(i<j) {
-			if(arr[i]==1) {
-				i++;
-
-			}
-			if(arr[j]==0) {
-				j--;
-			}
-			arr[i] = arr[i] + arr[j];
-			arr[j]=arr[i]-arr[j];
-			arr[i] = arr[i] - arr[j];
-			i++;
-			j--;
-
-		}
-		System.out.print(Arrays.toString(arr));
-
-	}
-}
-
-*program to find the sum of zigzag elements.(find the sum of elements in the shape z)
-{1,2,3
- 4,5,6
- 7,8,9
-} =>1+2+3+5+7+8+9=35
-import java.util.Scanner;
-public class Main
-{
-	public static void main(String[] args) {
-	    Scanner in =new Scanner(System.in);
-		int[][] arr=new int[3][3];
-		int sum=0;
+	    Scanner in= new Scanner(System.in);
+	    System.out.println("enter the values:");
+		int[] arr=new int[5];
 		for(int i=0;i<arr.length;i++){
-		    for(int j=0;j<arr[i].length;j++){
-		        arr[i][j]=in.nextInt();
-		    }   
-		}
-		for(int i=0;i<arr.length;i++){
-		    for(int j=0;j<arr[i].length;j++){
-		        if((i==1 && j==0) || i==1 && j==2){
-		            continue;
-		        }
-		        sum+=arr[i][j];
-		    }   
-		}
-		System.out.println(sum);
-	}
-}
-
-*program find the missing number in a sorted array.
- [1,2,3,5,6,7,8]——————>4
-import java.util.Scanner;
-public class Main
-{
-	public static void main(String[] args) {
-	    Scanner in =new Scanner(System.in);
-		int[] arr=new int[8];
-		int missingNumber=0;
-		for(int i=0;i<arr.length;i++){
+		    //take values from the user
 		    arr[i]=in.nextInt();
+		    System.out.println(arr[i]+" ");
 		}
-		for(int i=0;i<arr.length-1;i++){
-		    if(arr[i+1] != arr[i]+1){
-		        missingNumber=arr[i]+1;
+        for(int i:arr){
+		 System.out.println(i);   
+		}
+        System.out.print(Arrays.toString(arr));
+	}
+}
+
+Whenever, you’re trying to assign or trying to get nth value of an array, you will get an exception called ArrayOutofBound.
+- division and modulus
+counter variable 
+1)program to print no. of even and odd numbers in an array.
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner in= new Scanner(System.in);
+	    System.out.println("enter the values:");
+		int[] arr=new int[5];
+		int count_Even=0;
+		int count_Odd=0;
+		for(int i=0;i<arr.length;i++){
+		    //take values from the user
+		    arr[i]=in.nextInt();
+		    if(arr[i]%2==0){
+		        count_Even++;
+		    }else{
+		        count_Odd++;
 		    }
-		}System.out.println(missingNumber);
+		}
+		System.out.println("No of even num are:"+count_Even);
+		System.out.println("No of odd num are:"+count_Odd);
+
 		
 	}
-} 
-
-*To find the sequential count in an array:[1,0,1,0,1,1,1,0,1,1]
-import java.util.Scanner;
-public class Main{
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        int[] arr={1,0,1,0,1,1,1,0,1,1,1,1};
-        int max = 0;
-        int count=0;
-        
-        for(int i=0;i<arr.length;i++){
-            if(arr[i]==1){
-                count++;
-            }else{
-                count = 0;
+}
+2) program to print the highest value in an array.
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner in= new Scanner(System.in);
+	    System.out.println("enter the values:");
+		int[] arr=new int[5];
+		int maximum_value=0;
+		for(int i=0;i<arr.length;i++){
+		    arr[i]=in.nextInt();
+            if(arr[i]>maximum_value){
+                maximum_value=arr[i];
             }
-            
-            max = Math.max(max,count);
-        }
-        System.out.println(max);
-    }
+		}
+		System.out.println("The highest value in an array:"+maximum_value);
+	}
+}
+2) to find the second maximum value in an array.
+Using two for loops:
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner in= new Scanner(System.in);
+	    System.out.println("enter the values:");
+		int[] arr=new int[5];
+		int maximumValue=arr[0];
+		int secondMaximum=arr[0];
+		for(int i=1;i<arr.length;i++){
+		    arr[i]=in.nextInt();
+            if(arr[i]>maximumValue){
+                maximumValue=arr[i];
+            }
+		}
+		for(int i=1;i<arr.length;i++){
+		    if(arr[i]>secondMaximum){
+		        maximumValue=arr[i];
+		    }
+		}
+		System.out.println("The highest value in an array:"+maximumValue);
+	}
 }
 
 
-
+Optimized code:
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner in= new Scanner(System.in);
+	    System.out.println("enter the values:");
+		int[] arr=new int[5];
+		int maximumValue=arr[0];
+		int secondMaximum=arr[0];
+		for(int i=0;i<arr.length;i++){
+		    arr[i]=in.nextInt();
+            if(arr[i]>maximumValue){
+                secondMaximum=maximumValue;
+                maximumValue=arr[i];
+            }else if (arr[i]>secondMaximum){
+                secondMaximum=arr[i];
+            } 
+		}
+		System.out.println("The highest value in an array:"+secondMaximum);
+	}
+}
+In a given array we have only 0s and 1s as elements, move all zeroes to right side.
+Find whether the array is sorted or not.
+Find whether the given element is present in the array or not.
