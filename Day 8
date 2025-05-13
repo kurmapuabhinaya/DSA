@@ -1,0 +1,6 @@
+Recursion:
+- Function calls itself again till it reaches its base condition.
+
+There are two types in recursion:
+*Function calling same function itself abd itself.
+*Function calling another function itself and itself.
