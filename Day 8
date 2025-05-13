@@ -1,6 +1,122 @@
 Recursion:
 - Function calls itself again till it reaches its base condition.
 
-There are two types in recursion:
+> There are two types in recursion:
 *Function calling same function itself abd itself.
 *Function calling another function itself and itself.
+- If we didnot mention base condition properly we will get an exception called stack overflow.
+- Recursions are used to break the code
+
+# Write program to print factorial using recursion.
+
+5!=5*4!
+4!=4*3!
+3!=3*2!
+2!=2*1!
+1!=1*0!
+
+- For every recursive call elements will be pushed into a stack
+- After reaching base condition elements will be popped.
+
+- for our current question 5 4 3 2 1 all these values will be pushed into stack.
+
+- Pseudocode:
+
+fact(n){
+  if(n==0)
+    return 1;
+  else{
+    return n*fact(n-1);
+  }
+}
+
+- For fibonacci series:
+
+fib(n){
+  if(n==0 || n==1)
+     return 1;
+  else{
+    return fib(n-2)+fib(n-1);
+  }
+}
+
+- About max function:
+[1,2,3,4,5];
+max=Math.max(arr([i],max);
+min=Math.min(arr[i],min);
+
+*what is happening is:
+
+if(max>arr[i])
+        return max;
+else 
+        return arr[i];
+
+Pass by value and Pass by reference:
+- In java we dont have pointers so we can not use references.
+
+# Reverse an Array using two pointers
+
+Pseudocode:
+
+while(i<j){
+ swap(arr[i];arr[j]);
+ i++;
+ j--;
+}
+
+Executed code:
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		int [] arr={1,2,3,4,5};
+		int i=0;
+		int j=arr.length-1;
+		while(i<j){
+		    int temp=0;
+		    temp=arr[i];
+		    arr[i]=arr[j];
+		    arr[j]=temp;
+		    i++;
+		    j--;
+		}
+		System.out.println(Arrays.toString(arr));
+}
+}
+
+> Output: [5,4,3,2,1]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
