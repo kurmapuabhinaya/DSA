@@ -1,0 +1,100 @@
+Next Greater Element(NGE):
+-If stack is empty, return -1
+-compare peek element, if peek is greater then the selected element, pop peek element and push the selected element
+-If you did not find greater element in your peek elements, pop the element.
+The time complexity of all stack operations is O(1).
+==>n meetings in one room.
+custom sorting using comparator.
+- map pairs(start time,end time) and sort them using meeting end times.
+code for stock buy and sell problem.
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    int[] arr = {7, 10, 1, 3, 6, 9, 2};
+      int mini=arr[0];
+        int profit=0;
+        int maxProfit=0;
+        for(int i=1;i<arr.length;i++){
+            
+            profit=arr[i]-mini;
+            maxProfit=Math.max(maxProfit,profit);
+            mini=Math.min(mini,arr[i]);
+        }
+        System.out.println(maxProfit);    
+	}
+}
+=> code for leaders problem.
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    int[] arr={7,1,5,3,6,4};
+	    int n=arr.length;
+	    ArrayList<Integer> leaders = new ArrayList<>();
+	   int Max=Integer.MIN_VALUE;
+	   for(int i =n-1;i>=0;i--){
+	       if(arr[i]>Max){
+	           leaders.add(arr[i]);
+	           Max=arr[i];
+	       }
+	   }
+	   System.out.println(leaders);
+	}
+}
+Array List:
+
+Array is having fixed size. So once declared, we can’t change (either increase or decrease).
+To increase Array size dynamically, we use Array List.
+It belongs to collection framework.
+What is a framework?
+Framework is nothing but predefined methods and will guide the program .
+Package - has predefined methods but won’t guide us.
+Library-
+Syntax:
+List<Wrapper Class> ArrayListName = new ArrayList<>();
+Eg:
+List<Integer> leaders = new ArrayList<>();
+
+List is an interface and interface contains incomplete methods.
+Wrapper class is not a primitive data type but its a class.
+And in collections, we have to use wrapper classes only.
+<> are called generics.
+
+Dynamic nature of ArrayList.:
+If my array size is 2 and im trying to add third element, the size will be doubled.
+And it will copy previous elements and (vice versa) when removing the array size will become half.
+As arraylist is a class, we have to import the ArrayList class.Then, we can access all the predefined methods of ArrayList.
+
+Sub arrays:
+The part of array inside an array
+These elements should be continuous in an array.
+Program to find the maximum sum of sub arrays of an array.(kadane's algorithm )
+import java.util.*;
+public class Main
+{
+    public static long maxSubarraySum(int[] arr, int n){
+        long maxi=Long.MIN_VALUE;
+        long sum=0;
+        for(int i=0;i<n;i++){
+            sum+=arr[i];
+            if(sum>maxi){
+                maxi=sum;
+            }
+            if(sum<0){
+                sum=0;
+            }
+        }
+        return maxi;
+    }
+	public static void main(String[] args) {
+	    int[] arr={-2,1,-3,4,-1,2,1,-5,4};
+	    int n=arr.length;
+	    long result = maxSubarraySum(arr, n);
+        System.out.println("Maximum subarray sum is: " + result);
+
+	    
+	    
+	}
+}
