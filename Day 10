@@ -1,0 +1,95 @@
+Dutch flag problem:
+- Intialize three pointers l,m at 0th index and h at n-1.
+- The elements between m and h are unsorted. we have traverse between m and h.
+- If array of m=0 swap between arr[l] and arr[m] and m++ , l++.
+- If arr[m]=1 only m++.
+- Else m--.
+
+pseudo code:
+
+while(m<=h){
+  if(arr[m]==0){
+   swap(arr[m],arr[l]);
+    m++;
+  else if(arr[m]==1){
+    m++;
+  }
+  else{
+    swap(arr[m],arr[n]);
+  }
+}
+}
+
+CODE:
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		int[] arr={1,0,2,0,1,2,1,0,0,1};
+		int m=0;
+		int l=0;
+		int h=arr.length-1;
+		while(m<=h){
+		    if(arr[m]==0){
+		        int temp = arr[l];
+                arr[l] = arr[m];
+                arr[m] = temp;
+                l++;
+                m++;
+		    }
+		    else if(arr[m]==1){
+		        m++;
+		    }
+		    else{
+		        int temp = arr[h];
+                arr[h] = arr[m];
+                arr[m] = temp;
+                h--;
+		    }
+		}
+		for (int num : arr) {
+            System.out.print(num + " ");
+        }
+	}
+}
+
+Math.min(int a,int b);
+Math.max(int a,int b);
+ if(a<b){
+ return a;
+else{
+   return b;
+
+Collections:
+List:            Set:              Map:
+> ArrayList      > Hashset         > hash map
+> LinkedList     > LinkedHashset   > LinkedHashmap
+> Vector         >Treeset          > Treemap
+
+
+- List Set and Map these are interfaces and rest of the all terms are classes.
+- Interface contain incomplete methods.
+- List is ordered it can allow duplicates.
+- Set is unordered it wouldn't accept duplicates.
+- Maps containes 🗝 value pairs.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
