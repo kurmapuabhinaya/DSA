@@ -1,1 +1,28 @@
+Majority Elements:
+- From the given array assume that sarting index of the array is the majority element.
+- From the starting element compare the rest.
+- If you get the same value use the count.
+- If you get different decrease the count.
+- If counter becomes 0 it means till now we havent seen majority element
+- Again select new target element
+- The very next element is your target element
+- At the end of for loop if counter is more than 0 it means that there is a majority element is  present
+- Taking that target value count how many times the element repeated in the array.
+
+Longest consecutive elements of an array:(128)
+return the maximum number of elements that are consecutive.
+-> create a set . run a loop take the values from array and push into set using insert method.
+-> start iterating set values. we have to find whether the element is starting element or not by decreasing the value and checking the decreased value is present in the set or not.
+-> If it is a starting value then start comparing the elements.
+
+ 
+
+
+
+
+
+
+
+
+
 
