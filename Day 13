@@ -1,0 +1,159 @@
+Linear search:
+Search the element in the array in a linear way.
+T(c)=O(n)
+1)write a program to print the index of the target element in the array.
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		int[] arr={5,8,11,14,16};
+		int target=14;
+		for(int i=0;i<arr.length;i++){
+		    if(arr[i]==target){
+		        return i;
+		    }
+		}
+		return -1;
+	}
+}
+
+Binary Search:
+- To reduce time complexity while searching we use 'Binary search'.
+- in binary search  O(long n) time complexity.
+steps:
+- Intialize l pointer at 0 amd r pointer at 1.
+- Array should be sorted.
+- Run the loop from l to r.
+- Break the loop when L and R crosses each other.
+- Find the middle value by using left+right/2.
+- Now compare middle element to the target.
+- If it is equal return middle.
+- If middle value is smaller to the target it means definitely we won't get the element in left array
+- If middle element < target, then the target lies in tthe right portion of array. right pointer will remain in its position. we have to move left pointer tp mid+1.
+- If middle element > target, then the target lies in tthe left portion of array. left pointer will remain in its position. we have to move left pointer tp mid-1.
+
+CODE:
+main method code:
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		int[] arr={5,8,11,14,16};
+		int target=14;
+		int left=0;
+		int right=arr.length-1;
+		while(left<=right){
+		    int mid=(left+right)/2;
+		    if(arr[mid]==target){
+            return mid;
+		    }
+		    else if(arr[mid]>target){
+		        right=mid-1;
+		    }
+		    else{
+		        left=mid+1;
+		    }
+		}
+    return n;
+	}
+}
+
+CODE:
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {5, 8, 11, 14, 16};
+        int target = 14;
+        
+        int result = binarySearch(arr, target);
+        System.out.println(result);
+    
+    }
+
+    public static int binarySearch(int[] arr, int target) {
+        int left = 0;
+        int right = arr.length - 1;
+
+        while (left <= right) {
+            int mid = (left + right) / 2;
+
+            if (arr[mid] == target) {
+                return mid;
+            } else if (arr[mid] > target) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+
+        return -1; 
+    }
+}
+ - From the given array find the targeted element . Find the element in rotated sorted array.
+ steps:
+- initialize L and R
+- Take two pointers left,right. initialize left=0, right=arr.length-1
+- run the loop from left to right.
+- we have to find which half is sorted.
+- If arr[mid]<arr[l], it means right half is sorted and if target lies in between arr[l] and arr[mid].
+- It means element is present in left half.left pointer will remain same and right pointer will move to mid-1    
+- Else, element present in right half, right pointer will reamin same and left pointer will move to mid+1
+- If arr[mid]>arr[l], it means left half is sorted and target lies in between arr[mid] and arr[r]. it means element lies in right half.
+
+
+CODE:
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {7, 8, 1, 2, 3, 4, 5, 6};
+        int target = 7;
+
+        int result = searchInRotatedArray(arr, target);
+        System.out.println(result);
+    }
+
+    public static int searchInRotatedArray(int[] arr, int target) {
+        int left = 0;
+        int right = arr.length - 1;
+
+        while (left <= right) {
+            int mid = (left + right) / 2;
+
+            if (arr[mid] == target) {
+                return mid;
+            }
+
+            
+            if (arr[left] <= arr[mid]) {
+                
+                if (arr[left] <= target && target < arr[mid]) {
+                    right = mid - 1;
+                } else {
+                    left = mid + 1;
+                }
+            } 
+            
+            else {
+                if (arr[mid] < target && target <= arr[right]) {
+                    left = mid + 1;
+                } else {
+                    right = mid - 1;
+                }
+            }
+        }
+
+        return -1; 
+    }
+}
+
+
+
+
+
+
+
+
+
+
+ 
+ 
