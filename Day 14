@@ -1,0 +1,127 @@
+* Maximum product of sub array elements:
+- [2,3,-6,4,0,5,2,3,-1,0,7,8,9,-3]
+- start your product variable with 1.
+- In the sub array if we have even positive numbers then the product will be positive.
+- If we have odd negative numbers then the product will be negatnegative.
+- In the sub array if we have atleast one '0',then start your product variable with 1.
+- If we have negative value the product of prefix element will be positive.
+- The product of suffix elements also be positive.
+- For prefix we assume value as i, but for suffix we assume as (n-i-1).
+
+CODE:
+public class Main {
+    public static int maxProduct(int[] arr) {
+    int n=arr.length;
+    int pre=1, suff=1;
+    int ans=Integer.MIN_VALUE;
+    for(int i=0;i<n;i++){
+        if(pre==0) pre=1;
+        if(suff==0) suff=1;
+        pre*=arr[i];
+        suff*=arr[n-i-1];
+        ans=Math.max(ans, Math.max(pre,suff));
+    }
+    return ans;
+    
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {2,3,-6,4,0,5,2,3,-1,0,7,8,9,-3};
+
+        System.out.println("Maximum product subarray is: " + maxProduct(arr));
+        // Output: 6 (from subarray [2, 3])
+    }
+}
+
+* Leetcode questions: 229,15,56,88,4,162,1358,424,875,1011
+
+* koko eating bananas(875):
+
+- Whatever the max elements we have, we have to check those many elements(run the loop from 0 to max)
+- Intialize left pointer with '0'.
+- Intialize right corner with 'max'.
+- Get the middle value
+- Divide the array elements
+- Get the c values.
+- Add those c values with target hours()
+- If sum is < or = to h, eliminate right half, change the right pointer to mid-1.
+- If the sum is greater than the target, eliminate left half change the left pointer to mid+1.
+- Return arr[left].
+
+
+                                                                      OBJECT ORIENTED PROGRAMMING
+
+- There are 4 main things in oop's:
+  *Abstraction
+  *Inheritance
+  *Polymorphism
+  *Encapsulation
+
+- And to achieve these properties, the pre-requirements are class,object,constructor and Interface.
+
+# CLASS: class is a virtual entity and blueprint for objects.
+# OBJECT: instance of class.
+# CONSTRUCTOR: Initializing the object.
+
+- In an object we can call the methods which where present in that particular class, by creating object for that particular class.
+- Two types:
+  * Default constructor
+  * Perameterised constructor
+
+- for every class they will be default constructor's.
+- for every class there will be unfortunate first benchers.
+- constructors having some parameters called as parameterised constructors.
+
+^ INHERITANCE:
+    * Single inheritance
+    * Multi-level inheritance
+    * Multiple inheritance
+    * Hierarchy inheritance
+
+> SINGLE INHERITANCE: The properties are inherited from the parent class to child class.
+> MULTI-LEVEL INHERITANCE: The properties are inherited to parent class from grandchild class.
+> MULTIPLE INHERITANCE: The properties are inherited from multiple parent classes.
+> HIERARCHY INHERITANCE: The properties are inherited to multiple child classes.
+
+^ POLYMORPHISM: Same methods are appearing multiple times.
+- Two types
+     * METHOD OVERLOADING : in same class if we have multiple methods with same name with different parameters is called 'Method overloading'.
+     * METHOD OVERRIDING : in child class if we declare a method which where present in parent class with same method name and same parameters is called 'Method overriding'.
+
+NOTE : Main method can be overriding with different parameters.
+
+- Using extend keyword, we can inherit properties from classes.
+- Using implement keyword we can inherit properties from interfaces.
+
+^ ENCAPSULATION:
+- Binding method and data , hiding sensitive data is called 'Encapsulation'.
+- If the variables are private we can not access outside the class , if we wnt to access we can access using methods.
+
+^ ABSTRACTION:
+- Hiding implementation showing essential details.
+- Abstract method is a incomplete method.
+- These are two types:
+  *DATA ABSTRACTION
+*CONTROL ABSTRACTION
+  *FUNCTION ABSTRACTION
+*PROCEDURAL ABSTRACTION
+
+- If we want to make a method abstract we have to use abstract key word.
+- If we have abstract method we have to make the class abstract class.
+
+^ INTERFACE:
+- It contains only the abstract methods and we can't create object for interface.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
