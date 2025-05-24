@@ -1,3 +1,208 @@
+Static block and constructor:
+
+Constructors are used to initialise the objects.For every class there will be a default constructor. Whenever, we create an object constructor will be called and then object will be created.
+Constructor have class name and method properties(so neither class nor method).
+Eg:
+public class q2
+{
+	public static void main(String[] args) {
+		Demo d1=new Demo();
+		Demo d2=new Demo();
+	}
+}
+class Demo{
+    static{ //runs only once . singleton
+        System.out.println("Static block");
+    }
+    Demo(){
+        //constructor
+        System.out.println("Constructor");
+
+    }
+}
+Here, we created two objects so constructor will be called two times.
+O/p:
+Static block
+Constructor
+Constructor
+
+Static block will be created with just static keyword. It will be called automatically, no need to call with either object or class.
+Static method : for static method, no need to call with object you can directly call with class name. Here, static will act as instance or object.
+
+Entry control(for, while) and exit control (do while) statements.
+
+Conditional Statements:
+If,else and else if ladder aND SWITCH CASE
+These are used to check the condition and to execute the relevant block in constant time.
+Eg:
+
+if (condition1) {
+    // code runs if condition1 is true
+} else if (condition2) {
+    // code runs if condition2 is true
+} else {
+    // code runs if none of the above conditions are true
+}
+
+
+1)if,else if, else
+public class IfElseExample {
+    public static void main(String[] args) {
+        int number = -5;
+
+        if (number > 0) {
+            System.out.println("Positive number");
+        } else if (number < 0) {
+            System.out.println("Negative number");
+        } else {
+            System.out.println("Zero");
+        }
+    }
+}
+
+2)switch case:
+
+public class SwitchExample {
+    public static void main(String[] args) {
+        int day = 3;
+
+        switch (day) {
+            case 1:
+                System.out.println("Monday");
+                break;
+            case 2:
+                System.out.println("Tuesday");
+                break;
+            case 3:
+                System.out.println("Wednesday");
+                break;
+            case 4:
+                System.out.println("Thursday");
+                break;
+            case 5:
+                System.out.println("Friday");
+                break;
+            case 6:
+                System.out.println("Saturday");
+                break;
+            case 7:
+                System.out.println("Sunday");
+                break;
+            default:
+                System.out.println("Invalid day number");
+        }
+    }
+}
+
+Is”if” a method ?? What about “for”  ??
+
+Control Statements:
+I)entry control loop: for and while
+Eg:
+1)for loop:
+for(start; end; diff){
+}
+
+class Person{
+    int[] arr={1,2,3,4,5};
+    for(int i=0;i<n;i++){
+        return arr[i];
+    }
+
+=>Program to print multiplication table:
+
+import java.util.Scanner;
+class Main{
+    public static void main (String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n= sc.nextInt();
+        for(int i=1;i<=10;i++){
+            System.out.println(n+"*"+i+"="+n*i);
+        }
+    }
+}
+
+
+While loop:
+Start;
+while(end){
+Diff;
+}
+=>Program to print multiplication table:
+
+import java.util.Scanner;
+class Main{
+    public static void main (String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n= sc.nextInt();
+        int i=10;
+        while(i>=1){
+            System.out.println(n+"*"+i+"="+n*i);
+            i--;
+        }
+    }
+}
+
+class Main{
+    public static void main(String[] args){
+        
+        Student s1 = new Student();
+         s1.setName("Abhi");
+        System.out.println("Name : "+s1.getName());
+        s1.setAge(20);
+        System.out.println("Age : "+s1.getAge());
+         s1.setPassedOut(false);
+        System.out.println("Passed Or Not : "+s1.getPassedout());
+         s1.setMarks(295);
+        System.out.println("Marks : "+s1.getMarks());
+         s1.setERP(5000);
+        System.out.println("ERP : "+s1.getERP());
+    }
+}
+
+class Student{
+    int age;String name;boolean passedout;float marks;long ERP;
+    
+    void setAge(int age){
+        this.age = age;
+    }
+    void setName(String name){
+        this.name=name;
+    }
+    void setPassedOut(boolean passedout){
+        this.passedout = passedout;
+    }
+    void setMarks(float marks){
+        this.marks = marks;
+    }
+    void setERP(long ERP){
+        this.ERP = ERP;
+    }
+    
+    int getAge(){
+        return age;
+    }
+    String getName(){
+        return name;
+    }
+    boolean getPassedout(){
+        return passedout;
+    }
+    float getMarks(){
+        return marks;
+    }
+    long getERP(){
+        return ERP;
+    }
+}
+When we know the range, we prefer to use for loop. When we don't know the range, it is preferred to use while loop.
+=>Program for fibonacci and factorial using for and while loops:
+Reverse a string using modulo division and division.
+
+ii)exit control loop: do while
+
+
+
 Fibonacci using recursion:
 public class Main
 {
