@@ -1,0 +1,152 @@
+* STACKS AND QUEUES:
+
+*STACK:
+- Stack is a special data structure. Which follows last in first out(LIFO).It is a linear data structure.
+- We will get all outputsin constant time for all stack operations.
+- There are lot of stack operations but we have few major ones. They are:
+> PUSH(): Adding the element into the stack.
+* IMPLEMENTATION:
+ top=-1
+ push(int a){
+      top=top+1;
+ }
+ 
+> POP():  Deleting the last element in stack.
+* IMPLEMENTATION:
+ pop(){
+      top=top-1;
+ }
+ 
+ > PEEK(): Return the topmost element.
+
+ peek(){
+    return top;
+ }
+> IS-EMPTY(): Checks whether the stack is empty or not.
+
+isEmpty(){
+       if(top==-1)
+       return true;
+       else
+       return false;
+}
+
+> DISPLAY(): Prints all the stack elements.
+
+display(){
+
+> SIZE(): Getting the size of the stack.
+
+
+* Final draft of the code for stacks ..
+
+import java.util.*;
+class Main {
+    static int push(int[] arr, int top, int ele) {
+        if (top < arr.length - 1) {
+            top = top + 1;
+            arr[top] = ele;
+        } else {
+            System.out.println("Stack is full..!");
+        }
+        return top;
+    }
+
+    static int pop(int[] arr, int top) {
+        if (top > -1) {
+            System.out.println("Popped: " + arr[top]);
+            top = top - 1;
+        } else {
+            System.out.println("Stack is empty..!");
+        }
+        return top;
+    }
+
+    static void peek(int[] arr, int top) {
+        if (top == -1) {
+            System.out.println("Stack is empty..!");
+        } else {
+            System.out.println("Top element: " + arr[top]);
+        }
+    }
+
+    static boolean isEmpty(int top) {
+        return top == -1;
+    }
+
+    static int size(int top) {
+        return top + 1;
+    }
+
+    static void display(int[] arr, int top) {
+        if (top == -1) {
+            System.out.println("Stack is empty..!");
+        } else {
+            System.out.print("Stack elements: ");
+            for (int i = 0; i <= top; i++) {
+                System.out.print(arr[i] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = new int[5];
+        int top = -1;
+
+        top = push(arr, top, 1);
+        top = push(arr, top, 2);
+        top = push(arr, top, 3);
+        top = pop(arr, top);
+        peek(arr, top);
+        System.out.println("Size: " + size(top));
+        System.out.println("Is Empty? " + isEmpty(top));
+        display(arr, top);
+    }
+}
+
+* QUEUES:
+
+- Queue is a special data structure which follows first in first out. It is a data structure.
+- These are mostly used in data structures like in trees and graphs...,etc.
+* Types:
+- Single ended queue:
+- You can perform the operations from a single side only.
+
+* Double ended :
+- Operations can be performed from both sides.
+
+* Priority queue:(IMPORTANT)
+- The most important one which helps to solve heap problems.
+
+* Types of priority queue : 
+   > MINQUEUE 
+   > MAXQUEUE
+- Minqueue: In whatever order, we add the elements, the elements will be arranged in ascending order.
+- Maxqueue: In whatever order, we add the elements, the elements will be arranged in descending order.
+
+* QUEUE METHODS:
+- Offer: To add elements in queue.
+- Poll:  To delete an element.
+- Peek:
+- Size:
+- Display:
+- Is-Empty:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
