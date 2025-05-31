@@ -1,0 +1,88 @@
+SORTING:
+
+To get the target output in less time
+
+Bubble sort
+Selection sort
+Insertion
+Merge
+Quick
+Count
+Heap
+Radix
+
+
+| Algorithm          | Best Case  | Average Case | Worst Case | Space Complexity | Stable  |
+| ------------------ | ---------- | ------------ | ---------- | ---------------- | ------- |
+| *Bubble Sort*      | O(n)       | O(n²)        | O(n²)      | O(1)             | ✅      |
+| *Selection Sort*   | O(n²)      | O(n²)        | O(n²)      | O(1)             | ❌      |
+| *Insertion Sort*   | O(n)       | O(n²)        | O(n²)      | O(1)             | ✅      |
+| *Merge Sort*       | O(n log n) | O(n log n)   | O(n log n) | O(n)             | ✅      |
+| *Quick Sort*       | O(n log n) | O(n log n)   | O(n²)      | O(log n)         | ❌      |
+| *Heap Sort*        | O(n log n) | O(n log n)   | O(n log n) | O(1)             | ❌      |
+| *Counting Sort*    | O(n + k)   | O(n + k)     | O(n + k)   | O(k)             | ✅      |
+| *Radix Sort*       | O(nk)      | O(nk)        | O(nk)      | O(n + k)         | ✅      |
+| *Bucket Sort*      | O(n + k)   | O(n + k)     | O(n²)      | O(n + k)         | ✅      |
+
+
+
+If we use, inbuilt sort method which algorithm is taken internally.
+Ans ) mostly quick or merge sort was taken.
+
+BUBBLE SORT:
+it will compare the adjacent elements and it will swap accordingly. After an iteration, the weightiest or lightest element will go to …..
+arr= [4,5,3,2,1]
+
+for(I=0 to n-2){
+	for(j=I+1 to n-1{
+		if(arr[I]>arr[j]){
+			swap(arr[i],arr[j])
+}
+}
+}
+
+
+CODE:
+
+import java.util.*;
+public class Main {
+    static void bubbleSort(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) { 
+            for (int j = 0; j < n - i - 1; j++) { 
+                if (arr[j] > arr[j + 1]) {
+                    // swap(arr[i],arr[j])
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {5, 1, 4, 2, 8};
+        bubbleSort(arr);
+        System.out.println("Sorted array: " + Arrays.toString(arr));
+    }
+}
+
+*SELECTION SORT:
+CODE:
+static void selectionSort(int[] arr) {
+    int n = arr.length;
+    for (int i = 0; i < n - 1; i++) {
+        int si = i; // index of the smallest element
+        for (int j = i + 1; j < n; j++) {
+            if (arr[j] < arr[si]) {
+                si = j;
+            }
+        }
+        // Swap arr[i] and arr[si]
+        int temp = arr[i];
+        arr[i] = arr[si];
+        arr[si] = temp;
+    }
+}
+
+
